@@ -3,7 +3,8 @@
     <div class="row mt-4">
         <div class="col">
             <h2>Add TO-DO Item</h2>
-            <form action="" class="form-inline">
+            <form action="add_todo/" method="POST" class="form-inline">
+                {% csrf_token %}
                 <input type="text" class="form-control mb-2 mr-sm-2" name="todo" placeholder="type here...">
                 <button type="submit" class="btn btn-success mb-2">Add</button>
             </form>
