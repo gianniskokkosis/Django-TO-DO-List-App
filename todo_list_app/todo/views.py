@@ -6,3 +6,7 @@ def home(request):
 
 def about(request):
     return render(request, 'todo/todo_about.html')
+
+
+def add_todo(request):
+    print(request)
