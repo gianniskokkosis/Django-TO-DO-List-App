@@ -13,11 +13,17 @@
     <div class="row mt-4">
         <div class="col">
             <ul class="list-group">
-                <li class="list-group-item">TO-DO Item 1</li>
-                <li class="list-group-item">TO-DO Item 2</li>
-                <li class="list-group-item">TO-DO Item 3</li>
-                <li class="list-group-item">TO-DO Item 4</li>
-                <li class="list-group-item">TO-DO Item 5</li>
+                {% for todo in todos %}
+                    <li class="list-group-item">
+                        {{ todo.content }}
+                        <div class="float-right">
+                        <form action='delete_todo/{{todo.id}}/' method='POST'>
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-sm btn-danger mb-2">Delete</button>
+                        </form>
+                        </div>
+                    </li>
+                {% endfor %}
             </ul>
         </div>
     </div>
